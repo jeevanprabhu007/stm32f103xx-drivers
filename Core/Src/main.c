@@ -21,36 +21,21 @@
 #include "stm32f103xb.h"
 #include "stm32f1xx_hal.h"
 #include "stm32f1xx_hal_gpio.h"
-#include "C:\Users\monst\OneDrive\Desktop\stm32f103xx-drivers\Drivers\CustomeDrivers\GPIO\gpio.h"
+#include "gpio.h"
+#include "adc.h" 
+#include <stdint.h>
 /* Private includes ----------------------------------------------------------*/
 /* USER CODE BEGIN Includes */
 
 /* USER CODE END Includes */
 
-/* Private typedef -----------------------------------------------------------*/
-/* USER CODE BEGIN PTD */
 
-/* USER CODE END PTD */
 
-/* Private define ------------------------------------------------------------*/
-/* USER CODE BEGIN PD */
-
-/* USER CODE END PD */
-
-/* Private macro -------------------------------------------------------------*/
-/* USER CODE BEGIN PM */
-
-/* USER CODE END PM */
-
-/* Private variables ---------------------------------------------------------*/
-
-/* USER CODE BEGIN PV */
-
-/* USER CODE END PV */
 
 /* Private function prototypes -----------------------------------------------*/
 void SystemClock_Config(void);
 static void MX_GPIO_Init(void);
+
 /* USER CODE BEGIN PFP */
 
 /* USER CODE END PFP */
@@ -70,17 +55,19 @@ int main(void)
   SystemClock_Config();
   MX_GPIO_Init();
   
-
  
-
-
-
+ 
+ 
+ ADC1->CR2 |= (0x1u << 2);
+ while(ADC1->CR2 & (0x1 << 2));
+ ADC1->CR2 |= (0x1u << 0);
 
 
 
 
   while (1)
   {
+     
    
   }
   /* USER CODE END 3 */
@@ -141,9 +128,6 @@ static void MX_GPIO_Init(void)
   /* USER CODE END MX_GPIO_Init_2 */
 }
 
-/* USER CODE BEGIN 4 */
-
-/* USER CODE END 4 */
 
 /**
   * @brief  This function is executed in case of error occurrence.
