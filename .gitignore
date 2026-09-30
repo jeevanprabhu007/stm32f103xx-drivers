@@ -1,3 +1,9 @@
-build
-mx.scratch
-!.settings
+build/
+cmake-build-*/
+.cache/
+.vscode/
+.idea/
+*.elf
+*.bin
+*.hex
+*.map

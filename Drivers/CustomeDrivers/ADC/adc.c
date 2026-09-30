@@ -155,19 +155,16 @@ ADC_Status_t ADC_Init(ADC_Config_t *config)
     }
 
 
-   
-
+    
     ADCx->CR2 |= ADC_CR2_ADON;
-
-
-  
-
+    
+    
     for (volatile uint32_t i = 0;
          i < 1000;
          i++);
 
 
-   
+
 
     ADC_Calibrate(ADCx);
 

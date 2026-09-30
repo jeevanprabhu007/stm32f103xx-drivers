@@ -54,14 +54,7 @@ int main(void)
   HAL_Init();
   SystemClock_Config();
   MX_GPIO_Init();
-  
  
- 
- 
- ADC1->CR2 |= (0x1u << 2);
- while(ADC1->CR2 & (0x1 << 2));
- ADC1->CR2 |= (0x1u << 0);
-
 
 
 

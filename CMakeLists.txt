@@ -46,19 +46,20 @@ target_link_directories(${CMAKE_PROJECT_NAME} PRIVATE
 target_sources(${CMAKE_PROJECT_NAME} PRIVATE
     Drivers/CustomeDrivers/GPIO/gpio.c
     Drivers/CustomeDrivers/ADC/adc.c
+    Drivers/CustomeDrivers/PWM/pwm.c
 )
 
 # Add include paths
 target_include_directories(${CMAKE_PROJECT_NAME} PRIVATE
     ${CMAKE_SOURCE_DIR}/Drivers/CustomeDrivers/GPIO
     ${CMAKE_SOURCE_DIR}/Drivers/CustomeDrivers/ADC
+     ${CMAKE_SOURCE_DIR}/Drivers/CustomeDrivers/PWM
 )
 
 
 # Add project symbols (macros)
 target_compile_definitions(${CMAKE_PROJECT_NAME} PRIVATE
-    Drivers/CustomeDrivers/GPIO
-    Drivers/CustomeDrivers/ADC
+    
 )
 
 # Remove wrong libob.a library dependency when using cpp files
